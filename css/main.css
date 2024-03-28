@@ -80,12 +80,17 @@ h6,
 p {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 a {
     transition: 0.1s;
     text-decoration: none !important;
     color: #203152 !important;
+    user-select: none;
+}
+div{
+    user-select: none;
 }
 
 button,
@@ -106,20 +111,32 @@ textarea {
 }
 
 body {
+    -webkit-user-select: none; /* для WebKit-браузеров (Chrome, Safari) */
+    -moz-user-select: none; /* для браузеров на базе Gecko (Firefox) */
+    -ms-user-select: none; /* для Internet Explorer/Edge */
+    user-select: none; /* стандартное свойство CSS */
+    touch-action: manipulation; /* для оптимизации событий касания */
+}
+body {
 
     background: #FAF4F2;
     font-family: 'Baloo 2', sans-serif;
     color: #203152;
     font-size: 15px;
-	overflow: hidden; 
     height: 100%; 
 
 }
 
 main {
     margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-top: 3px;
+    
+}
+.main-item{
     position: relative;
-    min-height: 100vh;
 }
 
 
@@ -128,12 +145,46 @@ body {
 }
 
 
+
+
+.scroll-default {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.scroll-default::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-default::-webkit-scrollbar {
+    width: 0;
+}
+
+.scroll-default {
+    -ms-overflow-style: none;
+}
+
+.scroll-default {
+    overflow: -moz-scrollbars-none;
+}
+
 .content-dafault{
-    position: absolute !important;
-    width: 100% !important;
-    border-bottom: none !important;
-    left: 0 !important;
-    bottom: 0 !important;
+    position: relative;
+}
+.content-dafault:after{
+    content: "";
+    position: absolute;
+    left: -2px;
+    bottom: -200%;
+    height: 200%;
+    width: calc( 100% + 4px );
+    border: 2px solid #203152;
+    border-top: 0;
+    border-bottom: 0;
+    background: #EDDDDE;
 }
 
 .loader {
@@ -430,17 +481,13 @@ body {
 
 
 
-@media screen and (max-height: 712px){
-    .main-content{
-        position: relative !important;
-    }
-}
+
 
 
 
 .page-modal {
-
-    position: absolute;
+    z-index: 10;
+    position: fixed;
     left: 0;
     top: 20px;
     height: 150%;
@@ -484,7 +531,7 @@ body {
 .earn {
     background-image: url('../img/earn-bg.png');
     background-size: cover;
-    padding: 74px 20px 20px 20px;
+    padding: 32px 20px 20px 20px;
     background-size: cover;
     animation: scrollBackground 20s linear infinite;
 }
@@ -659,6 +706,7 @@ body {
 }
 
 .friends-header-block {
+    background: #fff;
     display: flex;
     align-items: center;
     padding: 9px 18px;
@@ -739,9 +787,8 @@ body {
     font-weight: 700;
     font-size: 18px;
     line-height: 23.4px;
-    position: absolute;
-    left: 20px;
-    bottom: 294px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
 
 
@@ -753,33 +800,19 @@ body {
     border: 2px solid #203152;
     background: #EDDDDE;
     padding: 20px 20px 25px 20px;
-    max-height: 286px;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
-.friends-content::-webkit-scrollbar {
-    display: none;
+.friends-content .scroll-default{
+    max-height: 256px;
+
 }
 
-.friends-content::-webkit-scrollbar {
-    width: 0;
-}
-
-.friends-content {
-    -ms-overflow-style: none;
-}
-
-.friends-content {
-    overflow: -moz-scrollbars-none;
-}
 
 .friends-content-btn {
     height: 52px;
     position: fixed;
-    bottom: 40px;
+    top: 599px;
+    z-index: 1;
     left: 2px;
     padding: 0 20px;
     background: #EDDDDE;
@@ -1039,9 +1072,7 @@ body {
 
 
 
-.my-pixel {
-    overflow: hidden;
-}
+
 
 .my-pixel-title {
     font-size: 24px;
@@ -1479,32 +1510,18 @@ body {
 }
 
 .city-content {
+    border-bottom: none;
     border-radius: 30px 30px 0 0;
     border: 2px solid #203152;
     background: #EDDDDE;
     padding: 20px 20px 25px 20px;
-    max-height: 304px;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+
+
+}
+.city-content .scroll-default{
+    max-height: 275px;
 }
 
-.city-content::-webkit-scrollbar {
-    display: none;
-}
-
-.city-content::-webkit-scrollbar {
-    width: 0;
-}
-
-.city-content {
-    -ms-overflow-style: none;
-}
-
-.city-content {
-    overflow: -moz-scrollbars-none;
-}
 
 .city-content-inner {
     display: flex;
@@ -1714,13 +1731,13 @@ body {
 
 }
 
-.rating-content-container{
+/*.rating-content-container{
     max-height: 264px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
+}*/
 
 
 .rating .my-pixel-switch-btn {
@@ -1728,10 +1745,11 @@ body {
 }
 
 .rating-content-your {
+    position: fixed;
+    top: 643px;
     margin-top: 16px;
-    width: calc( 100% + 20px );
-    position: relative;
-    left: -10px;
+    width: calc( 100% - 20px );
+    left: 10px;
 }
 .rating-content-your .city-content-inner{
     overflow: hidden;
@@ -1756,11 +1774,13 @@ body {
 }
 
 
-@media screen and (max-height: 772px){
-    .rating-content{
-        position: relative !important;
+@media screen and (max-height: 752px){
+    .rating-content-your{
+        top: auto;
+        bottom: 20px;
     }
 }
+
 
 
 
@@ -1820,11 +1840,7 @@ body {
     border: 2px solid #203152;
     background: #EDDDDE;
     padding: 20px 20px 25px 20px;
-    max-height: 415px;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+
 
 }
 .rating-city-content-scroll{
@@ -1943,6 +1959,9 @@ body {
 }
 
 .rating-city-content-your-default{
-    width: calc( 100% + 20px );
-    left: -10px;
+    position: fixed;
+    left: 0;
+    top: 884px;
+    width: calc( 100% - 20px );
+    left: 10px;
 }

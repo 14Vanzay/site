@@ -1,6 +1,17 @@
 $(document).ready(function() {
     $('.loader').fadeOut(1000);
+
 });
+
+
+
+function disableSelection(elem) { 
+ if (typeof elem.onselectstart != "undefined") {
+    return false;
+ } 
+ elem.style.cursor = "default"; 
+}
+disableSelection(document.body);
 
 $('a[href="#"]').on('click', function(e) {
     e.preventDefault();
@@ -41,7 +52,7 @@ $('.my-pixel-tab-btn-item').click(function() {
 });
 
 
-$('.my-pixel-modal-form-sub').click(function(){
+$('.my-pixel-modal-form-sub').click(function() {
     $(this).closest('.page-modal').find('.page-modal-close').click();
 });
 
@@ -87,35 +98,8 @@ $('.main-menu-item').on('touchstart', function() {
 });
 
 $('.main-menu-item').on('touchend', function() {
-  $(this).removeClass('active');
+    $(this).removeClass('active');
 });
-
-
-
-// $('.page-modal-close').on('touchstart', function() {
-//     e.preventDefault();
-//     e.stopPropagation();
-// });
-
-// $('.page-modal').on('touchstart', function(e) {
-//     startY = e.originalEvent.touches[0].clientY;
-//     startTop = $(this).position().top;
-//     $(this).css('transition', 'none');
-// });
-
-// $('.page-modal').on('touchmove', function(e) {
-//     var currentY = e.originalEvent.touches[0].clientY;
-//     var deltaY = currentY - startY;
-//     $(this).css('top', startTop + deltaY);
-// });
-
-// $('.page-modal').on('touchend', function() {
-//   $(this).addClass('hide');
-//   $(this).css('top', startTop + 'px'); 
-//   $(this).css('transition', 'all 0.5s ease-in-out');
-// });
-
-
 
 
 $('.page-modal-close').on('touchstart', function(e) {
@@ -131,7 +115,9 @@ $('.page-modal-close').on('touchmove', function(e) {
 });
 
 $('.page-modal-close').on('touchend', function() {
-  $(this).closest('.page-modal').addClass('hide');
-  $(this).closest('.page-modal').css('top', startTop + 'px'); 
-  $(this).closest('.page-modal').css('transition', 'all 0.5s ease-in-out');
+    $(this).closest('.page-modal').addClass('hide');
+    $(this).closest('.page-modal').css('top', startTop + 'px');
+    $(this).closest('.page-modal').css('transition', 'all 0.5s ease-in-out');
 });
+
+

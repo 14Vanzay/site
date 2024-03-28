@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="dist/slick/slick.css">
     <link rel="stylesheet" href="dist/slick/slick-theme.css">
     <link rel="stylesheet" href="css/main.css">
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <title>Document</title>
 </head>
 
@@ -17,162 +17,156 @@
         <img src="img/main-header-logo.png" alt="">
     </div>
     <main class="main">
-        <div class="main-header">
-            <a href="#" class="main-header-logo">
-                <img src="img/main-header-logo.png" alt="">
-            </a>
-            <div class="main-header-title">
-                Tonmap
+        <div class="main-item">
+            <div class="main-header">
+                <a href="#" class="main-header-logo">
+                    <img src="img/main-header-logo.png" alt="">
+                </a>
+                <div class="main-header-title">
+                    Tonmap
+                </div>
+                <a href="#" class="main-header-settings">
+                    <img src="img/settings.svg" alt="">
+                </a>
             </div>
-            <a href="#" class="main-header-settings">
-                <img src="img/settings.svg" alt="">
-            </a>
-        </div>
-        <div class="main-content content-dafault">
-            <div class="default-block">
-                <div class="main-content-header default-block-item">
-                    <a href="#" class="main-content-header-player">
-                        <div class="main-content-header-player-icon">
-
-                        </div>
-                        <p class="main-content-header-player-title">
-                            1,007,860,219
+            <div class="main-content content-dafault">
+                <div class="default-block">
+                    <div class="main-content-header default-block-item">
+                        <a href="#" class="main-content-header-player">
+                            <div class="main-content-header-player-icon">
+                            </div>
+                            <p class="main-content-header-player-title">
+                                1,007,860,219
+                            </p>
+                        </a>
+                        <a href="city.html" class="main-content-header-avatar ">
+                            <div class="main-content-header-avatar-icon">
+                                <img src="img/profile-avatar.jpg" alt="">
+                            </div>
+                            <p class="main-content-header-avatar-title">
+                                City
+                            </p>
+                        </a>
+                        <a href="#" class="main-content-header-league">
+                            <div class="main-content-header-league-icon">
+                                <img src="img/gold.svg" alt="">
+                            </div>
+                            <p class="main-content-header-league-title">
+                                Golden
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="main-content-row">
+                    <a href="my-pixel.html" class="main-content-row-item main-content-balance">
+                        <p class="main-content-row-item-title">
+                            Balance
+                        </p>
+                        <p class="main-content-row-item-slogan">
+                            <span class="main-content-balance-balance-val">
+                                1234
+                            </span>
+                            <span class="main-content-row-item-slogan-item">
+                                px
+                            </span>
                         </p>
                     </a>
-                    <a href="city.html" class="main-content-header-avatar " >
-                        <div class="main-content-header-avatar-icon">
-                            <img src="img/profile-avatar.jpg" alt="">
-                        </div>
-                        <p class="main-content-header-avatar-title">
-                            City
+                    <a href="rating.html" class="main-content-row-item">
+                        <p class="main-content-row-item-title">
+                            Rating
+                        </p>
+                        <p class="main-content-row-item-slogan">
+                            152,400th
                         </p>
                     </a>
-                    <a href="#" class="main-content-header-league">
-                        <div class="main-content-header-league-icon">
-                            <img src="img/gold.svg" alt="">
+                </div>
+                <div class="default-block main-content-bum-container">
+                    <a href="#" class="default-block-item main-content-bum" onclick="showMapPopup()">
+                        <div class="main-content-bum-title">
+                            <img src="img/Map.svg" alt="">
                         </div>
-                        <p class="main-content-header-league-title">
-                            Golden
+                        <div class="main-content-bum-icon">
+                            <img src="img/bum.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="default-block">
+                    <a href="#" class="default-block-item main-content-awards">
+                        <div class="main-content-awards-icon">
+                            <img src="img/medal.svg" alt="">
+                        </div>
+                        <div class="main-content-awards-title">
+                            Awards
+                        </div>
+                        <div class="main-content-awards-arrow">
+                            <img src="img/right-pointer.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="main-menu">
+                    <a href="friends.html" class="main-menu-item" id="myBtn">
+                        <div class="main-menu-item-icon">
+                            <img src="img/menu-icon-frens.svg" alt="">
+                        </div>
+                        <p class="main-menu-item-title">
+                            Frens
+                        </p>
+                    </a>
+                    <a href="earn.html" class="main-menu-item ">
+                        <div class="main-menu-item-icon">
+                            <img src="img/menu-icon-earn.svg" alt="">
+                        </div>
+                        <p class="main-menu-item-title">
+                            Earn
+                        </p>
+                    </a>
+                    <a href="#" class="main-menu-item" onclick="showMapPopup()">
+                        <div class="main-menu-item-icon">
+                            <img src="img/menu-icon-map.svg" alt="">
+                        </div>
+                        <p class="main-menu-item-title">
+                            Map
+                        </p>
+                    </a>
+                    <a href="#" class="main-menu-item">
+                        <div class="main-menu-item-icon">
+                            <img src="img/menu-icon-boost.svg" alt="">
+                        </div>
+                        <p class="main-menu-item-title">
+                            Boost
                         </p>
                     </a>
                 </div>
             </div>
-            <div class="main-content-row">
-                <a href="my-pixel.html" class="main-content-row-item main-content-balance">
-                    <p class="main-content-row-item-title">
-                        Balance
-                    </p>
-                    <p class="main-content-row-item-slogan">
-                        <span class="main-content-balance-balance-val">
-                            1234
-                        </span>
-                        <span class="main-content-row-item-slogan-item">
-                            px
-                        </span>
-                    </p>
-                </a>
-                <a href="rating.html" class="main-content-row-item">
-                    <p class="main-content-row-item-title">
-                        Rating
-                    </p>
-                    <p class="main-content-row-item-slogan">
-                        152,400th
-                    </p>
-                </a>
-            </div>
-            <div class="default-block main-content-bum-container">
-                <a href="#" class="default-block-item main-content-bum" onclick="showMapPopup()">
-				<div class="main-content-bum-title">
-					<img src="img/Map.svg" alt="">
-				</div>
-				<div class="main-content-bum-icon">
-					<img src="img/bum.svg" alt="">
-				</div>
-				</a>
-
-            </div>  
-            <div class="default-block">
-                <a href="#" class="default-block-item main-content-awards">
-                    <div class="main-content-awards-icon">
-                        <img src="img/medal.svg" alt="">
-                    </div>
-                    <div class="main-content-awards-title">
-                        Awards
-                    </div>
-                    <div class="main-content-awards-arrow">
-                        <img src="img/right-pointer.svg" alt="">
-                    </div>
-                </a>
-            </div>  
-            <div class="main-menu">
-                <a href="friends.html" class="main-menu-item" id="myBtn">
-                    <div class="main-menu-item-icon">
-                        <img src="img/menu-icon-frens.svg" alt="">
-                    </div>
-                    <p class="main-menu-item-title">
-                        Frens
-                    </p>
-                </a>
-                <a href="earn.html" class="main-menu-item ">
-                    <div class="main-menu-item-icon">
-                        <img src="img/menu-icon-earn.svg" alt="">
-                    </div>
-                    <p class="main-menu-item-title">
-                        Earn
-                    </p>
-                </a>
-               <a href="#" class="main-menu-item" onclick="showMapPopup()">
-				<div class="main-menu-item-icon">
-					<img src="img/menu-icon-map.svg" alt="">
-				</div>
-				<p class="main-menu-item-title">
-					Map
-				</p>
-				</a>
-
-                <a href="#" class="main-menu-item">
-                    <div class="main-menu-item-icon">
-                        <img src="img/menu-icon-boost.svg" alt="">
-                    </div>
-                    <p class="main-menu-item-title">
-                        Boost
-                    </p>
-                </a>
-            </div>
         </div>
-
     </main>
-
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="dist/slick/slick.min.js"></script>
     <script src="js/script.js"></script>
-
-	<script>
-
+    <script>
     let tg = window.Telegram.WebApp; // Получаем объект WebApp Telegram
     tg.ready(); // Сообщаем Telegram, что Mini App готов к отображению
     tg.expand(); // Разворачиваем Mini App на весь экран
-	tg.setHeaderColor('#FAF4F2'); // Устанавливаем белый цвет для заголовка
+    tg.setHeaderColor('#FAF4F2'); // Устанавливаем белый цвет для заголовка
     // Находим элемент, связанный с "Map"
     function showMapPopup() {
-    // При вызове функции отображаем всплывающее окно
-    tg.showPopup({
-        title: "Map Feature",
-        message: "This feature is under development.",
-        buttons: [
-            { id: "ok", type: "default", text: "OK" }
-        ]
-    }, function(buttonId) {
-        if (buttonId === "ok") {
-            console.log("User clicked OK");
-        }
-    });
+        // При вызове функции отображаем всплывающее окно
+        tg.showPopup({
+            title: "Map Feature",
+            message: "This feature is under development.",
+            buttons: [
+                { id: "ok", type: "default", text: "OK" }
+            ]
+        }, function(buttonId) {
+            if (buttonId === "ok") {
+                console.log("User clicked OK");
+            }
+        });
 
-    return false; // Предотвращаем переход по ссылке
-	}
-	</script>
-
+        return false; // Предотвращаем переход по ссылке
+    }
+    </script>
 </body>
 
 </html>
